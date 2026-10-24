@@ -4,16 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BatchBooth Privacy Policy</title>
-<meta name="description" content="How BatchBooth handles your photos and the small amount of purchase data it collects.">
+<meta name="description" content="How BatchBooth handles your photos, purchases and usage statistics.">
 <!--
   BatchBooth 隐私政策（App Store Connect 的 Privacy Policy URL，也是 App 内 PrivacyView 的链接目标）。
   自包含：无外部字体、脚本、统计。配色取自 BatchBooth/DesignSystem/Theme.swift（Aurora）。
-  内容与 App Store 隐私标签逐项对应（CONTEXT.md「隐私申报」、docs/adr/0007）：
+  内容与 App Store 隐私标签逐项对应（2026-10-24 起 7 项，runbook §5；RevenueCat ＋ Firebase）：
     Purchases → Purchase History（App Functionality + Analytics）
     Usage Data → Product Interaction（Analytics）
-    Not linked to identity / Not used for tracking
+    Identifiers → Device ID（Analytics）
+    Location → Coarse Location（Analytics）
+    Diagnostics → Crash Data / Performance Data / Other Diagnostic Data（App Functionality）
+    全部 Not linked to identity / Not used for tracking
   禁用措辞：不得声称完全离线，不得声称不收集任何数据（见 CONTEXT.md 合规映射表）。
-  TODO（App 侧）：设置页或隐私页要显示匿名 App User ID，下面「Your rights」一节引用了它。
 -->
 <style>
   :root {
@@ -75,14 +77,14 @@
   </header>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: 22 October 2026 · Applies to the BatchBooth app for iPhone</p>
+  <p class="meta">Effective date: 24 October 2026 · Applies to the BatchBooth app for iPhone</p>
 
   <div class="summary">
     <h2>The short version</h2>
     <ul>
       <li><strong>Your photos stay on your iPhone.</strong> Every step — cutout, background, resize, export — runs on the device. Nothing is uploaded, and we never see your pictures.</li>
-      <li><strong>We collect two things, and only two:</strong> your purchase history (to know whether your subscription is active) and one yes/no usage flag (whether you have completed a multi-platform export). Both are tied to a random anonymous ID, not to you.</li>
-      <li><strong>No account, no email, no tracking, no ads, no selling data.</strong></li>
+      <li><strong>What we do collect:</strong> your purchase history (to know whether your subscription is active), anonymous usage statistics (which screens and features are used, which marketplaces you export to, an approximate country or city derived from your IP address) and crash and performance reports. All of it is tied to random app IDs, not to you.</li>
+      <li><strong>No account, no email, no advertising ID, no tracking across apps, no ads, no selling data.</strong></li>
     </ul>
   </div>
 
@@ -106,7 +108,7 @@
   </ul>
 
   <h2>3. What we collect</h2>
-  <p>The app makes network requests for one purpose only: to verify purchases and subscriptions. For that it uses Apple’s StoreKit and <strong>RevenueCat</strong>, a third-party subscription-management service operated by RevenueCat, Inc. (United States). Through those services we collect exactly the following, and nothing else:</p>
+  <p>The app uses the network for two jobs only: to verify purchases and subscriptions, and to collect anonymous usage statistics and crash reports. For the first it uses Apple’s StoreKit and <strong>RevenueCat</strong>, a subscription-management service operated by RevenueCat, Inc. (United States). For the second it uses <strong>Google Firebase</strong> (Google Analytics for Firebase, Firebase Crashlytics and Firebase Performance Monitoring), operated by Google LLC (United States). None of these services ever receives your photos, cutouts, item names or file names. Through them we collect exactly the following:</p>
 
   <div class="table-wrap">
   <table>
@@ -119,51 +121,82 @@
     </tr>
     <tr>
       <td><strong>Product interaction</strong></td>
-      <td>A single yes/no attribute, <code>first_multi_platform_export</code>, recording whether you have completed an export to more than one marketplace at least once.</td>
-      <td><strong>Analytics</strong> — it is the one number we use to judge whether the app is doing its job.</td>
+      <td>Counts of what happens in the app: onboarding completed or skipped, photos imported, photos processed, exports completed (with the marketplaces chosen and the number of files), the paywall being shown and purchases completed, plus app opens and screen views recorded automatically by Firebase. It also includes one yes/no attribute, <code>first_multi_platform_export</code>, stored with RevenueCat.</td>
+      <td><strong>Analytics</strong> — understanding which features are used so we can improve them.</td>
       <td>Usage Data → Product Interaction</td>
+    </tr>
+    <tr>
+      <td><strong>Device ID</strong></td>
+      <td>A random app-instance identifier created by Firebase when the app is first opened, and Apple’s identifier for vendor (IDFV). <strong>Not</strong> the advertising identifier (IDFA), which the app never accesses.</td>
+      <td><strong>Analytics</strong> — counting unique users and sessions without knowing who they are.</td>
+      <td>Identifiers → Device ID</td>
+    </tr>
+    <tr>
+      <td><strong>Approximate location</strong></td>
+      <td>A country or city-level location that Google Analytics derives from your IP address. The IP address itself is not stored by Google Analytics. The app never asks for access to your location.</td>
+      <td><strong>Analytics</strong> — knowing which countries the app is used in.</td>
+      <td>Location → Coarse Location</td>
+    </tr>
+    <tr>
+      <td><strong>Crash data</strong></td>
+      <td>When the app crashes: the stack trace, the app version, and the device model and iOS version.</td>
+      <td><strong>App functionality</strong> — finding and fixing crashes.</td>
+      <td>Diagnostics → Crash Data</td>
+    </tr>
+    <tr>
+      <td><strong>Performance data</strong></td>
+      <td>App start-up time, screen rendering, network request timing and memory or CPU use.</td>
+      <td><strong>App functionality</strong> — finding slow parts of the app.</td>
+      <td>Diagnostics → Performance Data</td>
+    </tr>
+    <tr>
+      <td><strong>Other diagnostic data</strong></td>
+      <td>Technical context sent with crash and performance reports, such as free disk space, memory, orientation and whether the app was in the foreground.</td>
+      <td><strong>App functionality</strong> — reproducing problems.</td>
+      <td>Diagnostics → Other Diagnostic Data</td>
     </tr>
   </table>
   </div>
 
-  <p>Both items are attached to a <strong>random, anonymous app user ID</strong> generated on your device the first time the app runs. That ID is not derived from your name, email, phone number, Apple ID or any device identifier, and we do not collect any of those.</p>
+  <p>Purchase data and the usage attribute are attached to a <strong>random, anonymous app user ID</strong> generated by RevenueCat on your device the first time the app runs; it is shown on the app’s Privacy screen (Settings → Privacy). Firebase data is attached to its own random app-instance ID. Neither ID is derived from your name, email, phone number or Apple ID, we never link them to you, and we never combine them with other data to identify you.</p>
 
   <h3>What we do not do</h3>
   <ul>
-    <li>We do not collect your name, email address, contacts, location, device identifiers or advertising identifier (IDFA).</li>
+    <li>We do not collect your name, email address, phone number, contacts or precise location, and we do not collect the advertising identifier (IDFA).</li>
     <li>We do not track you across other apps or websites, and the app does not request App Tracking Transparency permission because it has no reason to.</li>
-    <li>We do not show ads, and we do not sell, rent or share your data for advertising.</li>
+    <li>We do not show ads, we do not send usage data to advertising networks, and we do not sell, rent or share your data for advertising.</li>
     <li>There is no sign-up, account or password in the app.</li>
   </ul>
 
   <h3>Statistics that stay on your phone</h3>
-  <p>The app keeps a few aggregate counters locally (for example, how many photos you have exported) to show you your remaining free allowance and to improve the app. These never leave your device and are not collected by us.</p>
+  <p>The app also keeps a few aggregate counters locally (for example, how many free photos you have used) to show you your remaining free allowance. Those counters stay on your device.</p>
 
   <h2>4. Third parties</h2>
   <ul>
     <li><strong>Apple</strong> processes all payments through the App Store and provides StoreKit, which the app uses to confirm purchases. Apple’s handling of your purchase and account data is governed by <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</li>
     <li><strong>RevenueCat, Inc.</strong> (United States) receives the purchase history and the single usage attribute described above, tied to the anonymous ID, and stores them on our behalf. RevenueCat acts as our service provider and is bound by <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a>.</li>
+    <li><strong>Google LLC</strong> (United States) provides Firebase and receives the usage statistics, approximate location, crash, performance and diagnostic data described above. Google processes this data on our behalf as a data processor under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing and Security Terms</a>; see also <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a> and <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>. We have not enabled Google signals or any advertising link in Firebase.</li>
   </ul>
-  <p>Because RevenueCat operates in the United States, this data may be processed outside the country you live in. Where EU, UK or similar data-protection law applies, such transfers rely on RevenueCat’s standard contractual safeguards.</p>
-  <p>We use no analytics SDKs, advertising networks, crash-reporting services or social-media plug-ins beyond what is described here.</p>
+  <p>Because RevenueCat and Google operate in the United States, this data may be processed outside the country you live in. Where EU, UK or similar data-protection law applies, such transfers rely on these providers’ standard contractual clauses and other safeguards.</p>
+  <p>We use no advertising networks, attribution or ad-measurement SDKs, or social-media plug-ins.</p>
 
   <h2>5. How long we keep data</h2>
   <ul>
     <li><strong>On your device:</strong> photos, items, templates and local statistics stay until you delete them or delete the app.</li>
     <li><strong>With RevenueCat:</strong> the purchase history and the usage attribute are kept, under the anonymous ID, until you ask us to delete them (see below). Deleting the app from your phone does <em>not</em> automatically delete this record, because it is what lets you restore a purchase later.</li>
+    <li><strong>With Google Firebase:</strong> usage statistics are kept for no longer than 14 months; crash reports are kept for 90 days. They are then deleted automatically.</li>
     <li><strong>With Apple:</strong> your App Store purchase and subscription records are kept by Apple under Apple’s own retention rules; we cannot delete those.</li>
   </ul>
 
   <h2>6. Your rights</h2>
   <p>Depending on where you live (for example the EU/EEA, the United Kingdom, Switzerland, Brazil or California), you may have the right to access, correct, delete or receive a copy of the personal data we hold about you, to object to or restrict certain processing, and to lodge a complaint with your local data-protection authority. We honour these requests for everyone, wherever you live.</p>
-  <p>To exercise any of them, email <a href="mailto:leojiahk@outlook.com?subject=BatchBooth%20privacy%20request">leojiahk@outlook.com</a> and include the anonymous app user ID shown in the app’s Settings, so we can find your record — it is the only way we can link a request to the data, since we hold nothing else that identifies you. We respond within 30 days. Requests about Apple’s own purchase records should go to Apple.</p>
-  <!-- TODO App 侧：设置页 / 隐私页要显示 RevenueCat 的匿名 App User ID，否则用户无法提供它。 -->
+  <p>To exercise any of them, email <a href="mailto:leojiahk@outlook.com?subject=BatchBooth%20privacy%20request">leojiahk@outlook.com</a> and include the anonymous ID shown on the app’s Privacy screen (Settings → Privacy), so we can find your record — it is the only way we can link a request to the data, since we hold nothing else that identifies you. Firebase statistics cannot be linked to that ID; to delete them, we delete the app’s analytics data on request or it expires as described above. We respond within 30 days. Requests about Apple’s own purchase records should go to Apple.</p>
 
   <h2>7. Children</h2>
   <p>BatchBooth is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
 
   <h2>8. Security</h2>
-  <p>Your photos never leave your device, which removes most risk by design. The small amount of purchase data that does leave is sent over encrypted connections (HTTPS) to Apple and RevenueCat, and is never combined with information that could identify you.</p>
+  <p>Your photos never leave your device, which removes most risk by design. The purchase, usage and diagnostic data that does leave is sent over encrypted connections (HTTPS) to Apple, RevenueCat and Google, and is never combined with information that could identify you.</p>
 
   <h2>9. Changes to this policy</h2>
   <p>If we change this policy we will update the effective date at the top of this page. For material changes we will also say so in the app’s release notes on the App Store. Continued use of the app after a change means you accept the updated policy.</p>
