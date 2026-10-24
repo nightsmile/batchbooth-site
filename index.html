@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BatchBooth — Bulk listing photos for resellers</title>
+<meta name="description" content="BatchBooth turns one set of item photos into ready-to-post listing photos for every marketplace you sell on. Everything runs on your iPhone.">
+<!--
+  BatchBooth 产品首页（Marketing URL）。
+  自包含：无外部字体、脚本、统计。配色取自 BatchBooth/DesignSystem/Theme.swift（Aurora）。
+  TODO 上架后：把 .store-button 的 href="#" 换成 App Store 链接。
+-->
+<style>
+  :root {
+    --brand1: #7A5CFF; --brand2: #E04BB0; --brand3: #FF9A5C;
+    --bg: #F6F4FA; --panel: #FFFFFF; --text: #15121F; --text-mid: #5D576F; --text-low: #9791A6;
+    --line: rgba(30, 22, 60, 0.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0A10; --panel: #17151F; --text: #F4F2F8; --text-mid: #A8A3B7; --text-low: #6D687E;
+      --line: rgba(255, 255, 255, 0.085);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: var(--text); }
+  nav a { color: var(--text-mid); text-decoration: none; font-size: 14px; margin-left: 16px; }
+  nav a:hover { color: var(--text); }
+  .hero { padding: 40px 0 24px; }
+  .hero h1 {
+    font-size: clamp(30px, 7vw, 44px); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 14px;
+    background: linear-gradient(135deg, var(--brand1), var(--brand2), var(--brand3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { font-size: 18px; color: var(--text-mid); margin: 0 0 24px; max-width: 560px; }
+  .store-button {
+    display: inline-block; padding: 14px 22px; border-radius: 16px; font-weight: 600; text-decoration: none; color: #fff;
+    background: linear-gradient(135deg, #6A4CF5, #C63B9E); box-shadow: 0 10px 30px rgba(224, 75, 176, 0.35);
+  }
+  .store-button small { display: block; font-weight: 400; font-size: 12px; opacity: 0.85; }
+  .note { font-size: 13px; color: var(--text-low); margin-top: 10px; }
+  .features { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px 0 40px; }
+  @media (min-width: 640px) { .features { grid-template-columns: repeat(3, 1fr); } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+  .card h2 { font-size: 16px; margin: 0 0 6px; }
+  .card p { margin: 0; font-size: 14px; color: var(--text-mid); }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: 1px;
+         background: linear-gradient(135deg, var(--brand1), var(--brand2), var(--brand3)); }
+  .platforms { font-size: 14px; color: var(--text-mid); padding-bottom: 40px; }
+  footer { border-top: 1px solid var(--line); padding: 20px 0 40px; font-size: 13px; color: var(--text-low); }
+  footer a { color: var(--text-mid); text-decoration: none; margin-right: 16px; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="./">BatchBooth</a>
+    <nav>
+      <a href="support/">Support</a>
+      <a href="privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Bulk listing photos, no limits.</h1>
+    <p>Shoot an item once. BatchBooth turns that one set of photos into a ready-to-post set for every marketplace you sell on — sized, cropped and exported in one go, all on your iPhone.</p>
+    <!-- TODO: 上架后把 href 换成 App Store 链接，例如 https://apps.apple.com/app/id<APP_ID> -->
+    <a class="store-button" href="#">Download on the App Store<small>iPhone · iOS 17 or later</small></a>
+    <p class="note">Free to try. Then one flat yearly price, or buy it outright.</p>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h2><span class="dot"></span>One export, every marketplace</h2>
+      <p>Pick the platforms you sell on and get a separate, correctly sized set for each — in a single export.</p>
+    </div>
+    <div class="card">
+      <h2><span class="dot"></span>Grouped by item, not by file</h2>
+      <p>Each item is one unit: a clean cover shot plus honest detail shots, handled together.</p>
+    </div>
+    <div class="card">
+      <h2><span class="dot"></span>Your photos never leave your device</h2>
+      <p>Cutouts, backgrounds, resizing and export all run on your iPhone. There is no upload and no account.</p>
+    </div>
+  </section>
+
+  <p class="platforms">Built-in presets for eBay, Poshmark, Depop, Mercari and Vinted, plus your own custom templates. Available in English, German, French, Spanish, Italian, Dutch, Polish, Simplified Chinese and Japanese.</p>
+
+  <footer>
+    <a href="support/">Support</a>
+    <a href="privacy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+    <div style="margin-top:10px;">© 2026 BatchBooth. Marketplace names are trademarks of their respective owners; BatchBooth is not affiliated with or endorsed by any of them.</div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BatchBooth Privacy Policy</title>
+<meta name="description" content="How BatchBooth handles your photos and the small amount of purchase data it collects.">
+<!--
+  BatchBooth 隐私政策（App Store Connect 的 Privacy Policy URL，也是 App 内 PrivacyView 的链接目标）。
+  自包含：无外部字体、脚本、统计。配色取自 BatchBooth/DesignSystem/Theme.swift（Aurora）。
+  内容与 App Store 隐私标签逐项对应（CONTEXT.md「隐私申报」、docs/adr/0007）：
+    Purchases → Purchase History（App Functionality + Analytics）
+    Usage Data → Product Interaction（Analytics）
+    Not linked to identity / Not used for tracking
+  禁用措辞：不得声称完全离线，不得声称不收集任何数据（见 CONTEXT.md 合规映射表）。
+  TODO（App 侧）：设置页或隐私页要显示匿名 App User ID，下面「Your rights」一节引用了它。
+-->
+<style>
+  :root {
+    --brand1: #7A5CFF; --brand2: #E04BB0; --brand3: #FF9A5C;
+    --bg: #F6F4FA; --panel: #FFFFFF; --text: #15121F; --text-mid: #5D576F; --text-low: #9791A6;
+    --line: rgba(30, 22, 60, 0.09); --accent: #5A3EDF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0A10; --panel: #17151F; --text: #F4F2F8; --text-mid: #A8A3B7; --text-low: #6D687E;
+      --line: rgba(255, 255, 255, 0.085); --accent: #BBA8FF;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+  nav a { color: var(--text-mid); text-decoration: none; font-size: 14px; margin-left: 16px; }
+  h1 {
+    font-size: clamp(28px, 6vw, 36px); line-height: 1.15; letter-spacing: -0.02em; margin: 28px 0 4px;
+    background: linear-gradient(135deg, var(--brand1), var(--brand2), var(--brand3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .meta { color: var(--text-low); font-size: 14px; margin: 0 0 24px; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; margin-bottom: 28px; }
+  .summary h2 { margin: 0 0 8px; font-size: 16px; }
+  .summary ul { margin: 0; padding-left: 20px; color: var(--text-mid); font-size: 15px; }
+  a { color: var(--accent); }
+  h2 { font-size: 20px; margin: 32px 0 8px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin: 20px 0 6px; }
+  p, li { color: var(--text-mid); font-size: 15.5px; }
+  p { margin: 8px 0; }
+  ul { padding-left: 20px; margin: 8px 0; }
+  strong { color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; margin: 10px 0 4px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--text-low); font-weight: 500; font-size: 13px; }
+  td { color: var(--text-mid); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; background: var(--panel); border: 1px solid var(--line); padding: 1px 5px; border-radius: 6px; }
+  .table-wrap { overflow-x: auto; }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 20px 0 40px; font-size: 13px; color: var(--text-low); }
+  footer a { color: var(--text-mid); text-decoration: none; margin-right: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="../">BatchBooth</a>
+    <nav>
+      <a href="../support/">Support</a>
+      <a href="../privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: 22 October 2026 · Applies to the BatchBooth app for iPhone</p>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li><strong>Your photos stay on your iPhone.</strong> Every step — cutout, background, resize, export — runs on the device. Nothing is uploaded, and we never see your pictures.</li>
+      <li><strong>We collect two things, and only two:</strong> your purchase history (to know whether your subscription is active) and one yes/no usage flag (whether you have completed a multi-platform export). Both are tied to a random anonymous ID, not to you.</li>
+      <li><strong>No account, no email, no tracking, no ads, no selling data.</strong></li>
+    </ul>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>BatchBooth is published by an independent developer (“the developer of BatchBooth”, “we”, “us”). This policy explains what the BatchBooth app for iPhone (“the app”) does with information about you. If anything here is unclear, email <a href="mailto:leojiahk@outlook.com">leojiahk@outlook.com</a>.</p>
+
+  <h2>2. Your photos and items</h2>
+  <p>The app exists to process your item photos, and it does that <strong>entirely on your device</strong>:</p>
+  <ul>
+    <li>Cutouts, background replacement, shadows, cropping, resizing and file export all run locally using Apple’s on-device frameworks.</li>
+    <li>Your photos, cutouts, item names, templates and export history are stored in the app’s own folder on your iPhone. They are <strong>never uploaded</strong>, never queued on a server and never accessible to us.</li>
+    <li>Deleting the app deletes that folder and everything in it.</li>
+    <li>If you allow it, finished exports are also saved to your Photos library in albums named after each item. Those albums belong to your Photos library and you can delete them at any time.</li>
+  </ul>
+
+  <h3>Photo library permission</h3>
+  <p>The app asks for access to your photo library and uses the wording below in the system prompt. You can change the permission at any time in iPhone Settings → Privacy &amp; Security → Photos. If you grant limited or no access, the app copies the photos you pick into its own folder so it still works, but it cannot save exports to your library.</p>
+  <ul>
+    <li><em>Read and write:</em> “BatchBooth opens the photos you pick so it can reload the originals of your items later, and saves finished listing photos into albums named after each item.”</li>
+    <li><em>Add only:</em> “BatchBooth saves your finished listing photos into albums named after each item.”</li>
+  </ul>
+
+  <h2>3. What we collect</h2>
+  <p>The app makes network requests for one purpose only: to verify purchases and subscriptions. For that it uses Apple’s StoreKit and <strong>RevenueCat</strong>, a third-party subscription-management service operated by RevenueCat, Inc. (United States). Through those services we collect exactly the following, and nothing else:</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Data</th><th>What it is</th><th>Why</th><th>App Store privacy label</th></tr>
+    <tr>
+      <td><strong>Purchase history</strong></td>
+      <td>Which plan you bought (yearly, monthly or lifetime), whether a subscription is active or expired, whether you have used a free trial, and the Apple transaction identifiers needed to verify this.</td>
+      <td><strong>App functionality</strong> — unlocking what you paid for and restoring purchases on a new device.<br><strong>Analytics</strong> — aggregate revenue and retention statistics that help us run the app.</td>
+      <td>Purchases → Purchase History</td>
+    </tr>
+    <tr>
+      <td><strong>Product interaction</strong></td>
+      <td>A single yes/no attribute, <code>first_multi_platform_export</code>, recording whether you have completed an export to more than one marketplace at least once.</td>
+      <td><strong>Analytics</strong> — it is the one number we use to judge whether the app is doing its job.</td>
+      <td>Usage Data → Product Interaction</td>
+    </tr>
+  </table>
+  </div>
+
+  <p>Both items are attached to a <strong>random, anonymous app user ID</strong> generated on your device the first time the app runs. That ID is not derived from your name, email, phone number, Apple ID or any device identifier, and we do not collect any of those.</p>
+
+  <h3>What we do not do</h3>
+  <ul>
+    <li>We do not collect your name, email address, contacts, location, device identifiers or advertising identifier (IDFA).</li>
+    <li>We do not track you across other apps or websites, and the app does not request App Tracking Transparency permission because it has no reason to.</li>
+    <li>We do not show ads, and we do not sell, rent or share your data for advertising.</li>
+    <li>There is no sign-up, account or password in the app.</li>
+  </ul>
+
+  <h3>Statistics that stay on your phone</h3>
+  <p>The app keeps a few aggregate counters locally (for example, how many photos you have exported) to show you your remaining free allowance and to improve the app. These never leave your device and are not collected by us.</p>
+
+  <h2>4. Third parties</h2>
+  <ul>
+    <li><strong>Apple</strong> processes all payments through the App Store and provides StoreKit, which the app uses to confirm purchases. Apple’s handling of your purchase and account data is governed by <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</li>
+    <li><strong>RevenueCat, Inc.</strong> (United States) receives the purchase history and the single usage attribute described above, tied to the anonymous ID, and stores them on our behalf. RevenueCat acts as our service provider and is bound by <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a>.</li>
+  </ul>
+  <p>Because RevenueCat operates in the United States, this data may be processed outside the country you live in. Where EU, UK or similar data-protection law applies, such transfers rely on RevenueCat’s standard contractual safeguards.</p>
+  <p>We use no analytics SDKs, advertising networks, crash-reporting services or social-media plug-ins beyond what is described here.</p>
+
+  <h2>5. How long we keep data</h2>
+  <ul>
+    <li><strong>On your device:</strong> photos, items, templates and local statistics stay until you delete them or delete the app.</li>
+    <li><strong>With RevenueCat:</strong> the purchase history and the usage attribute are kept, under the anonymous ID, until you ask us to delete them (see below). Deleting the app from your phone does <em>not</em> automatically delete this record, because it is what lets you restore a purchase later.</li>
+    <li><strong>With Apple:</strong> your App Store purchase and subscription records are kept by Apple under Apple’s own retention rules; we cannot delete those.</li>
+  </ul>
+
+  <h2>6. Your rights</h2>
+  <p>Depending on where you live (for example the EU/EEA, the United Kingdom, Switzerland, Brazil or California), you may have the right to access, correct, delete or receive a copy of the personal data we hold about you, to object to or restrict certain processing, and to lodge a complaint with your local data-protection authority. We honour these requests for everyone, wherever you live.</p>
+  <p>To exercise any of them, email <a href="mailto:leojiahk@outlook.com?subject=BatchBooth%20privacy%20request">leojiahk@outlook.com</a> and include the anonymous app user ID shown in the app’s Settings, so we can find your record — it is the only way we can link a request to the data, since we hold nothing else that identifies you. We respond within 30 days. Requests about Apple’s own purchase records should go to Apple.</p>
+  <!-- TODO App 侧：设置页 / 隐私页要显示 RevenueCat 的匿名 App User ID，否则用户无法提供它。 -->
+
+  <h2>7. Children</h2>
+  <p>BatchBooth is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
+
+  <h2>8. Security</h2>
+  <p>Your photos never leave your device, which removes most risk by design. The small amount of purchase data that does leave is sent over encrypted connections (HTTPS) to Apple and RevenueCat, and is never combined with information that could identify you.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>If we change this policy we will update the effective date at the top of this page. For material changes we will also say so in the app’s release notes on the App Store. Continued use of the app after a change means you accept the updated policy.</p>
+
+  <h2>10. Contact</h2>
+  <p>Questions, requests or complaints: <a href="mailto:leojiahk@outlook.com">leojiahk@outlook.com</a>.</p>
+
+  <footer>
+    <a href="../">Home</a>
+    <a href="../support/">Support</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+    <div style="margin-top:10px;">© 2026 BatchBooth</div>
+  </footer>
+</div>
+</body>
+</html>

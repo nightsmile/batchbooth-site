@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BatchBooth Support</title>
+<meta name="description" content="Help and frequently asked questions for BatchBooth, the bulk listing photo app for resellers.">
+<!--
+  BatchBooth 支持页（App Store Connect 的 Support URL）。
+  自包含：无外部字体、脚本、统计。配色取自 BatchBooth/DesignSystem/Theme.swift（Aurora）。
+  价格以美国商店为准，其他地区由 App Store 按汇率与税费换算，App 内显示的才是最终价格。
+-->
+<style>
+  :root {
+    --brand1: #7A5CFF; --brand2: #E04BB0; --brand3: #FF9A5C;
+    --bg: #F6F4FA; --panel: #FFFFFF; --text: #15121F; --text-mid: #5D576F; --text-low: #9791A6;
+    --line: rgba(30, 22, 60, 0.09); --accent: #5A3EDF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0A10; --panel: #17151F; --text: #F4F2F8; --text-mid: #A8A3B7; --text-low: #6D687E;
+      --line: rgba(255, 255, 255, 0.085); --accent: #BBA8FF;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+  nav a { color: var(--text-mid); text-decoration: none; font-size: 14px; margin-left: 16px; }
+  h1 {
+    font-size: clamp(28px, 6vw, 36px); line-height: 1.15; letter-spacing: -0.02em; margin: 28px 0 8px;
+    background: linear-gradient(135deg, var(--brand1), var(--brand2), var(--brand3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { color: var(--text-mid); font-size: 17px; margin: 0 0 24px; }
+  .contact { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; margin-bottom: 28px; }
+  .contact strong { display: block; margin-bottom: 4px; }
+  a { color: var(--accent); }
+  h2 { font-size: 20px; margin: 32px 0 8px; letter-spacing: -0.01em; }
+  details { border-top: 1px solid var(--line); padding: 12px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; font-weight: 600; font-size: 16px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--text-low); font-weight: 400; }
+  details[open] summary::after { content: "–"; }
+  details p, details ul { color: var(--text-mid); font-size: 15px; margin: 8px 0 0; }
+  details ul { padding-left: 20px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; background: var(--panel); border: 1px solid var(--line); padding: 1px 5px; border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--text-low); font-weight: 500; font-size: 13px; }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 20px 0 40px; font-size: 13px; color: var(--text-low); }
+  footer a { color: var(--text-mid); text-decoration: none; margin-right: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="../">BatchBooth</a>
+    <nav>
+      <a href="../support/">Support</a>
+      <a href="../privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <h1>Support</h1>
+  <p class="lede">BatchBooth is a listing-photo workbench for people who sell second-hand items on more than one marketplace. You import one set of photos per item, and the app exports a correctly sized set for each platform you pick — all processed on your iPhone.</p>
+
+  <div class="contact">
+    <strong>Need help or found a bug?</strong>
+    Email <a href="mailto:leojiahk@outlook.com?subject=BatchBooth%20support">leojiahk@outlook.com</a>. Please include your iPhone model and iOS version; the “Send Feedback” button in the app’s Settings adds them for you. We usually reply within two business days.
+  </div>
+
+  <h2>Getting started</h2>
+
+  <details open>
+    <summary>Which marketplaces are supported?</summary>
+    <p>BatchBooth ships with export presets for <strong>eBay, Poshmark, Depop, Mercari and Vinted</strong>, and you can create your own templates (aspect ratio, long edge, photo limit, PNG or JPEG, background colour, shadow) for anything else.</p>
+    <p>Marketplace names are used only to describe which preset matches which site. BatchBooth is an independent app and is not affiliated with, sponsored by or endorsed by any of these marketplaces. The app does not post listings for you — you upload the exported photos yourself.</p>
+  </details>
+
+  <details>
+    <summary>Do my photos get uploaded anywhere?</summary>
+    <p>No. Cutouts, backgrounds, resizing and export all run on your device. Your photos are never uploaded, never queued on a server and never seen by us. The only time the app talks to the internet is to check whether your subscription is active. See the <a href="../privacy/">Privacy Policy</a> for details.</p>
+  </details>
+
+  <details>
+    <summary>Where do my exported photos go?</summary>
+    <p>Exports are written to BatchBooth’s own folder on your iPhone. You can browse them in the <strong>Files</strong> app under <em>On My iPhone → BatchBooth</em>, share them from the export screen, or AirDrop them.</p>
+    <p>If you have allowed BatchBooth to add photos to your library, each export is also saved to a <strong>Photos album named after the item</strong>, so you can pick them straight from the marketplace app’s photo picker.</p>
+  </details>
+
+  <details>
+    <summary>Why does the Vinted preset only crop and resize?</summary>
+    <p>Vinted does not allow edited or retouched item photos. For that preset BatchBooth deliberately skips cutouts, background replacement and shadows for the whole item and only crops and scales each photo to the right size, so what you upload is still the original picture. Other presets apply the full treatment to the cover photo and keep the detail shots untouched except for sizing.</p>
+  </details>
+
+  <details>
+    <summary>What does “cover” and “detail” mean?</summary>
+    <p>The first photo of an item is the <strong>cover</strong>: it gets a cutout, a clean background and the platform’s crop. Every other photo is a <strong>detail</strong> shot and is only cropped and resized, keeping the original pixels so buyers see the real condition of the item. You can change which photo is the cover at any time.</p>
+  </details>
+
+  <details>
+    <summary>Which devices and languages are supported?</summary>
+    <p>iPhone running <strong>iOS 17.0 or later</strong>. The app can also run on iPad and Apple silicon Macs in iPhone compatibility mode, but it is designed and tested for iPhone.</p>
+    <p>Available in English, German, French, Spanish, Italian, Dutch, Polish, Simplified Chinese and Japanese. The app follows your system language; you can also pick a language just for BatchBooth in Settings.</p>
+  </details>
+
+  <h2>Free use, plans and billing</h2>
+
+  <details>
+    <summary>What can I do for free?</summary>
+    <p>Everything, up to a free allowance that is counted <strong>per photo exported</strong> — by default <strong>8 photos</strong>. Editing is always free; the allowance is only checked when you export.</p>
+    <ul>
+      <li>Exporting the same photo to several marketplaces counts as <strong>one</strong> photo.</li>
+      <li>Re-exporting a photo you have already used does not count again.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>How much does BatchBooth cost?</summary>
+    <table>
+      <tr><th>Plan</th><th>Price (US App Store)</th><th>Notes</th></tr>
+      <tr><td>Yearly</td><td>$29.99 / year</td><td>Includes a <strong>1-month free trial</strong> for new subscribers</td></tr>
+      <tr><td>Monthly</td><td>$4.99 / month</td><td>No trial</td></tr>
+      <tr><td>Lifetime</td><td>$69.99 one-time</td><td>Pay once, no renewal</td></tr>
+    </table>
+    <p>All plans unlock the same features with no export limits. Prices are shown in your local currency in the app and may differ by country. The free trial is offered once per Apple account for this subscription group; if you have used a trial before, the yearly plan starts billing immediately. Payment is charged to your Apple account, and subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</p>
+  </details>
+
+  <details>
+    <summary>How do I restore a purchase on a new phone?</summary>
+    <p>Open <strong>Settings → Restore Purchases</strong> inside the app, or tap “Restore Purchases” at the bottom of the plans screen. Make sure the phone is signed in with the same Apple account you bought with.</p>
+  </details>
+
+  <details>
+    <summary>How do I cancel or change my subscription?</summary>
+    <p>Subscriptions are managed by Apple, not inside the app. On your iPhone open <strong>Settings → [your name] → Subscriptions → BatchBooth</strong>, or use the “Manage Subscription” shortcut in the app’s Settings. To avoid being charged for the next period, cancel <strong>at least 24 hours before</strong> the current period (or the free trial) ends. You keep access until the end of the period you have paid for.</p>
+  </details>
+
+  <details>
+    <summary>How do I get a refund?</summary>
+    <p>Purchases are processed by Apple, so refunds are handled by Apple too. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in with the Apple account you bought with, and choose the BatchBooth purchase. We cannot issue refunds ourselves.</p>
+  </details>
+
+  <h2>Troubleshooting</h2>
+
+  <details>
+    <summary>The app says a size is “community-sourced”. What does that mean?</summary>
+    <p>Some marketplaces do not publish official image sizes. Where a preset’s size comes from seller experience rather than the platform’s own documentation, the app labels it so you know. If a marketplace rejects an export, please tell us which platform and what it said — we update presets as platforms change.</p>
+  </details>
+
+  <details>
+    <summary>Import or export fails, or the app can’t see my photos.</summary>
+    <p>Check <strong>iPhone Settings → Privacy &amp; Security → Photos → BatchBooth</strong>. With “Limited” or “None” access the app copies the photos you pick into its own folder and still works, but it cannot save exports to your Photos library. Free up storage if you have less than a few hundred megabytes left, then try again. If the problem continues, email us with the steps you took.</p>
+  </details>
+
+  <details>
+    <summary>How do I delete my data?</summary>
+    <p>Your photos, items and exports live only on your phone: deleting the app removes them. For the anonymous purchase record kept for subscription verification, see “Your rights” in the <a href="../privacy/">Privacy Policy</a>.</p>
+  </details>
+
+  <footer>
+    <a href="../">Home</a>
+    <a href="../privacy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+    <div style="margin-top:10px;">© 2026 BatchBooth · <a href="mailto:leojiahk@outlook.com">leojiahk@outlook.com</a></div>
+  </footer>
+</div>
+</body>
+</html>
